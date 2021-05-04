@@ -1,0 +1,352 @@
+@charset "UTF-8";
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+@-webkit-keyframes toRight {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+  }
+}
+
+@keyframes toRight {
+  from {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  to {
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+  }
+}
+
+@-webkit-keyframes toLeft {
+  from {
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes toLeft {
+  from {
+    -webkit-transform: translateX(5px);
+            transform: translateX(5px);
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+body, input, button {
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background-color: #2B2E33;
+}
+
+.search {
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.search h1 {
+  font-size: 2.25rem;
+  font-weight: 500;
+  color: #f0f0f0;
+  margin-bottom: 50px;
+  text-align: center;
+}
+
+.search .sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.search input {
+  padding: 10px 20px;
+  font-size: 1.125rem;
+  border: none;
+  outline: none;
+  width: 400px;
+  margin-right: 25px;
+  border-radius: 8px;
+  -webkit-transition: -webkit-box-shadow .5s;
+  transition: -webkit-box-shadow .5s;
+  transition: box-shadow .5s;
+  transition: box-shadow .5s, -webkit-box-shadow .5s;
+}
+
+.search input:focus {
+  -webkit-box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+          box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  -webkit-transition: -webkit-box-shadow .3s;
+  transition: -webkit-box-shadow .3s;
+  transition: box-shadow .3s;
+  transition: box-shadow .3s, -webkit-box-shadow .3s;
+}
+
+.search button {
+  background-color: #27AE60;
+  width: 165px;
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  color: #f0f0f0;
+  border: none;
+  border-radius: 8px;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.search button::after {
+  content: '→';
+  display: inline-block;
+  margin-left: 10px;
+  -webkit-animation: toLeft .3s forwards;
+          animation: toLeft .3s forwards;
+}
+
+.search button:hover::after {
+  -webkit-animation: toRight .3s forwards;
+          animation: toRight .3s forwards;
+}
+
+.profile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #f0f0f0;
+}
+
+.profile h2 {
+  font-size: 1.5rem;
+}
+
+.profile aside {
+  background-color: #26292D;
+  -webkit-box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.25);
+          box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.25);
+  max-width: 400px;
+  height: 100vh;
+  padding: 0 20px;
+}
+
+.profile .user {
+  text-align: center;
+  color: #f0f0f0;
+}
+
+.profile .user #img-profile {
+  max-width: 250px;
+  max-height: 250px;
+  border-radius: 50%;
+  margin: 40px auto;
+}
+
+.profile .user #user {
+  color: #999DA5;
+  margin: 10px 0 30px 0;
+}
+
+.profile hr {
+  border: 1px solid #494D54;
+  margin: 30px 0;
+}
+
+.profile .info {
+  color: #999DA5;
+  padding: 0 10px;
+}
+
+.profile .info li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 20px 0;
+}
+
+.profile .info li img {
+  margin-right: 20px;
+}
+
+.profile .info li span {
+  color: #f0f0f0;
+}
+
+.profile .repos {
+  width: 100%;
+  padding: 30px 10px 30px 30px;
+}
+
+.profile .repos h2 {
+  font-weight: 500;
+  margin-bottom: 40px;
+}
+
+.profile .repos .cards {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.profile .repos .cards p {
+  font-size: 0.875rem;
+}
+
+.profile .repos .cards a {
+  color: #f0f0f0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  max-width: 300px;
+  min-height: 170px;
+  background-color: #32353A;
+  border-radius: 8px;
+  padding: 10px 20px;
+  -webkit-box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+          box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.25);
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.profile .repos .cards a h3 {
+  font-size: 1.125rem;
+  font-weight: 500;
+}
+
+.profile .repos .cards a > div p {
+  margin: 10px 0;
+  line-height: 20px;
+}
+
+.profile .repos .cards a ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.profile .repos .cards a ul li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.profile .repos .cards a ul li img {
+  margin-right: 15px;
+}
+/*# sourceMappingURL=style.css.map */

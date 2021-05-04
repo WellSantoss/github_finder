@@ -1,0 +1,23 @@
+$black: #2B2E33;
+$black-2: #26292D;
+$white: #f0f0f0;
+$gray: #999DA5;
+$primary: #27AE60;
+
+@keyframes toRight {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(5px);
+  }
+}
+
+@keyframes toLeft {
+  from {
+    transform: translateX(5px);
+  }
+  to {
+    transform: translateX(0);
+  }
+}

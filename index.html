@@ -10,13 +10,56 @@
     <title>GitHub Finder</title>
   </head>
   <body>
-    <main class="search">
-      <h1>Pesquise por um Perfil do GitHub</h1>
-      <form action="./profile.html">
-        <label for="search" class="sr">Usuário</label>
-        <input type="text" name="search" id="search">
-        <button>Pesquisar</button>
-      </form>
+    <main class="profile">
+      <aside>
+        <div class="user">
+          <img id="img-profile" src="#" alt="Imagem de Perfil">
+          <h2 id="name"></h2>
+          <a href="#" id="user" target="_blank"></a>
+          <p id="bio"></p>
+        </div>
+
+        <hr>
+
+        <ul class="info">
+          <li id="local">
+            <img src="./assets/local.svg" alt="Ícone Local">
+            <p></p>
+          </li>
+          <li id="email">
+            <img src="./assets/email.svg" alt="Ícone Email">
+            <p></p>
+          </li>
+          <li id="website">
+            <img src="./assets/website.svg" alt="Ícone Email">
+            <p><a href="#" target="_blank"></a></p>
+          </li>
+          <li id="rede">
+            <img src="./assets/rede.svg" alt="Ícone Email">
+            <p>
+              <span id="followers"></span> Seguidores • <span id="following"></span> Seguindo
+            </p>
+          </li>
+        </ul>
+      </aside>
+
+      <div class="content">
+        <div class="search">
+          <h1>Pesquise por um Perfil do GitHub</h1>
+          <form>
+            <label for="search" class="sr">Usuário</label>
+            <input type="text" name="search" id="search">
+            <button>Pesquisar</button>
+          </form>
+        </div>
+  
+        <div class="repos">
+          <h2>Repositórios (<span id="repos-qtd"></span>)</h2>
+          <div class="cards"></div>
+        </div>
+      </div>
     </main>
+
+    <script src="./js/script.js"></script>
   </body>
 </html>

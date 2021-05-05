@@ -35,10 +35,6 @@ footer, header, hgroup, menu, nav, section {
   display: block;
 }
 
-body {
-  line-height: 1;
-}
-
 a {
   text-decoration: none;
 }
@@ -111,6 +107,32 @@ table {
   }
 }
 
+@-webkit-keyframes fadeRight {
+  from {
+    -webkit-transform: translateX(-20px);
+            transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fadeRight {
+  from {
+    -webkit-transform: translateX(-20px);
+            transform: translateX(-20px);
+    opacity: 0;
+  }
+  to {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    opacity: 1;
+  }
+}
+
 body, input, button {
   font-family: 'Poppins', sans-serif;
 }
@@ -120,7 +142,7 @@ body {
 }
 
 .search {
-  height: 100vh;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -128,19 +150,17 @@ body {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  padding-top: 20px;
 }
 
 .search h1 {
   font-size: 2.25rem;
   font-weight: 500;
   color: #f0f0f0;
-  margin-bottom: 50px;
+  margin-bottom: 10px;
   text-align: center;
 }
 
@@ -168,6 +188,7 @@ body {
   transition: -webkit-box-shadow .5s;
   transition: box-shadow .5s;
   transition: box-shadow .5s, -webkit-box-shadow .5s;
+  color: #2B2E33;
 }
 
 .search input:focus {
@@ -205,9 +226,6 @@ body {
 }
 
 .profile {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   color: #f0f0f0;
 }
 
@@ -219,9 +237,19 @@ body {
   background-color: #26292D;
   -webkit-box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.25);
           box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.25);
-  max-width: 400px;
-  height: 100vh;
+  width: 400px;
   padding: 0 20px;
+  display: none;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  -webkit-animation: fadeRight .3s forwards;
+          animation: fadeRight .3s forwards;
+}
+
+.profile .content {
+  width: 100%;
 }
 
 .profile .user {
@@ -238,6 +266,7 @@ body {
 
 .profile .user #user {
   color: #999DA5;
+  display: inline-block;
   margin: 10px 0 30px 0;
 }
 
@@ -265,6 +294,10 @@ body {
   margin-right: 20px;
 }
 
+.profile .info li a {
+  color: #999DA5;
+}
+
 .profile .info li span {
   color: #f0f0f0;
 }
@@ -272,6 +305,7 @@ body {
 .profile .repos {
   width: 100%;
   padding: 30px 10px 30px 30px;
+  display: none;
 }
 
 .profile .repos h2 {
@@ -307,7 +341,7 @@ body {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  max-width: 300px;
+  width: 300px;
   min-height: 170px;
   background-color: #32353A;
   border-radius: 8px;

@@ -3,9 +3,6 @@ const input = document.querySelector('#search');
 
 form.addEventListener('submit', search);
 
-
-
-
 function search(event) {
   event.preventDefault();
   
@@ -23,7 +20,6 @@ function fetchGitHub(user) {
       setUser(body.login, body.html_url);
       setBio(body.bio);
       setLocal(body.location);
-      setEmail(body.email);
       setSite(body.blog);
       setRede(body.followers, body.following);
       setRepos(body.repos_url);
@@ -50,47 +46,34 @@ function setUser(user, url) {
 }
 
 function setBio(msg) {
-  const userP = document.querySelector('#user');
   const bioP = document.querySelector('#bio');
 
   bioP.innerText = msg;
 
   if (msg == null) {
-    userP.style.marginBottom = 0;
+    bioP.innerText = '';
   }
 }
 
 function setLocal(local) {
-  const localLi = document.querySelector('#local');
-  const localP = localLi.querySelector('p');
+  const localP = document.querySelector('#local p');
 
   localP.innerText = local;
   
   if (local == null) {
-    localLi.style.display = 'none';
-  }
-}
-
-function setEmail(email) {
-  const emailLi = document.querySelector('#email');
-  const emailP = emailLi.querySelector('p');
-
-  emailP.innerText = email;
-  
-  if (email == null) {
-    emailLi.style.display = 'none';
+    localP.innerText = '';
   }
 }
 
 function setSite(url) {
-  const siteLi = document.querySelector('#website');
-  const siteA = siteLi.querySelector('a');
+  const siteA = document.querySelector('#website a');
 
   siteA.innerText = url;
   siteA.href = url;
   
   if (url == '') {
-    siteLi.style.display = 'none';
+    siteA.innerText = '';
+    siteA.href = '';
   }
 }
 
@@ -108,6 +91,9 @@ function setRepos(repos_url) {
     .then(response => response.json())
     .then(body => {
 
+      const reposDiv = document.querySelector('.repos .cards');
+      reposDiv.innerHTML = '';
+
       body.forEach(repo => {
         criaLink(repo.html_url, repo.name, repo.description, repo.language, repo.stargazers_count, repo.forks);
       });
@@ -121,6 +107,7 @@ function setQtdRepos(reposQtd) {
 
 function criaLink(url, name, obs, language, stars, forks) {
   const link = document.createElement('a');
+
   link.href = url;
   link.setAttribute('target', '_blank');
   link.innerHTML = `<div>

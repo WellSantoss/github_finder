@@ -154,10 +154,11 @@ body {
       -ms-flex-align: center;
           align-items: center;
   padding-top: 20px;
+  margin-bottom: 30px;
 }
 
 .search h1 {
-  font-size: 2.25rem;
+  font-size: 2rem;
   font-weight: 500;
   color: #f0f0f0;
   margin-bottom: 10px;
@@ -178,7 +179,7 @@ body {
 
 .search input {
   padding: 10px 20px;
-  font-size: 1.125rem;
+  font-size: .875rem;
   border: none;
   outline: none;
   width: 400px;
@@ -204,7 +205,7 @@ body {
   background-color: #27AE60;
   width: 165px;
   text-transform: uppercase;
-  font-size: 1.125rem;
+  font-size: .875rem;
   color: #f0f0f0;
   border: none;
   border-radius: 8px;
@@ -267,7 +268,11 @@ body {
 .profile .user #user {
   color: #999DA5;
   display: inline-block;
-  margin: 10px 0 30px 0;
+  margin-top: 10px;
+}
+
+.profile .user #bio {
+  margin-top: 30px;
 }
 
 .profile hr {
